@@ -10,14 +10,13 @@
 
 <body>
     <h1>PHP Censorship Exercise</h1>
-    <form action="censored.php" method=POST>
+    <form action="censored.php" method="GET">
 
-        <input type="text" name="censored" placeholder="Enter a word to censor" required>
+        <input type="text" name="censored" placeholder="Enter a word to censor">
 
         <br><br>
 
-        <textarea name="paragraph" cols="30" rows="10" required>
-        </textarea>
+        <textarea name="paragraph" cols="30" rows="10"></textarea>
 
         <br><br>
 

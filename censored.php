@@ -15,21 +15,34 @@
 
     <?php
 
-    $censored = $_POST['censored'];
-    $paragraph = $_POST['paragraph'];
-    $censoredParagraph = str_replace($censored, '***', $paragraph);
-    $censoredWordCalc = substr_count($paragraph, $censored);
-    $censoredWordLength = strlen($censored) * $censoredWordCalc;
-    $updatedLength = strlen($paragraph) - $censoredWordLength;
+    if (isset($_GET['censored']) && isset($_GET['paragraph'])) {
 
+        $censored = $_GET['censored'];
+        $paragraph = $_GET['paragraph'];
 
-    echo "Original paragraph: <br><br> ";
-    echo $paragraph . "<br><br>";
-    echo 'Length: ' . strlen($paragraph) . "<br><br>";
+        if (!empty($censored) && !empty($paragraph)) {
 
-    echo "Censored paragraph: <br><br> ";
-    echo $censoredParagraph . "<br><br>";
-    echo 'Updated Length: ' . $updatedLength;
+            $censoredParagraph = str_replace($censored, '***', $paragraph);
+            $censoredWordCalc = substr_count($paragraph, $censored);
+            $censoredWordLength = strlen($censored) * $censoredWordCalc;
+            $updatedLength = strlen($paragraph) - $censoredWordLength;
+
+            echo "Original paragraph: <br><br> ";
+            echo $paragraph . "<br><br>";
+            echo 'Length: ' . strlen($paragraph) . "<br><br>";
+
+            echo "Censored paragraph: <br><br> ";
+            echo $censoredParagraph . "<br><br>";
+            echo 'Updated Length: ' . $updatedLength;
+        } else {
+
+            echo 'Enter both a word and a paragraph';
+        }
+    } else {
+
+        echo 'Enter both a word and a paragraph';
+    }
+
     ?>
 
 </body>
