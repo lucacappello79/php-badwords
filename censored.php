@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,11 +14,11 @@
     <h1>PHP Censorship Exercise Results</h1>
 
     <?php
-    
+
     $censored = $_POST['censored'];
     $paragraph = $_POST['paragraph'];
     $censoredParagraph = str_replace($censored, '***', $paragraph);
-    $censoredWordCalc= substr_count($paragraph, $censored);
+    $censoredWordCalc = substr_count($paragraph, $censored);
     $censoredWordLength = strlen($censored) * $censoredWordCalc;
     $updatedLength = strlen($paragraph) - $censoredWordLength;
 
@@ -29,8 +30,8 @@
     echo "Censored paragraph: <br><br> ";
     echo $censoredParagraph . "<br><br>";
     echo 'Updated Length: ' . $updatedLength;
-
     ?>
 
 </body>
+
 </html>

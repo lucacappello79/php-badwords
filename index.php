@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,14 +12,18 @@
     <h1>PHP Censorship Exercise</h1>
     <form action="censored.php" method=POST>
 
-        <input type="text" name="censored" placeholder="Enter a word to censor" required><br><br>
+        <input type="text" name="censored" placeholder="Enter a word to censor" required>
+
+        <br><br>
 
         <textarea name="paragraph" cols="30" rows="10" required>
-            Temporibus porro minus mollitia voluptate, aliquid sit laudantium distinctio totam voluptatem et nam. Nesciunt labore sit adipisci doloremque in soluta sit officia eius modi!
-        </textarea><br>
+        </textarea>
+
+        <br><br>
 
         <input type="submit" value="S U B M I T">
     </form>
-    
+
 </body>
+
 </html>
